@@ -8,14 +8,21 @@ function Book(title, author, pages, read) {
   }
 }
 
+
+
 function Reader(name) {
   this.name = name
+  // this.sayName = function(name) {
+  //   this.name = name
+  //   console.log(`My name is ${this.name}`)
+  // }
 }
 
-Reader.prototype.sayName = function(name) {
-  this.name = name
+Reader.prototype.sayName = function() {
   console.log(`My name is ${this.name}`)
 }
+
+
 
 
 Object.setPrototypeOf(Book.prototype, Reader.prototype)
@@ -29,17 +36,17 @@ Book.prototype.chapterOn = function(chapter) {
 
 const Hbook = new Book("The Hobbit", "J.R.R. Tolkien", 554, false)
 
-let t = Hbook.chapterOn(17)
+Hbook.name = 'Boobs'
+// let t = Hbook.chapterOn(17)
+// console.log(Hbook.chapter)
 
-const x = Hbook.sayName("Boobs")
-
-console.log(Hbook.chapter)
+const x = Hbook.sayName()
 
 
 console.log(Hbook.information())
-console.log(Hbook.pages)
 
 
 
 
 const Reader1 = new Reader("Brandon")
+Reader1.sayName('Brandon')
