@@ -1,0 +1,64 @@
+body {
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  background-color: black;
+  color: white;
+}
+
+
+
+
+
+
+form {
+  border: 1px solid red;
+  /* margin: 1rem; */
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
+  gap: 0.5rem;
+}
+
+form label {
+  /* grid-row: 1 / 1; */
+  width: max-content;
+}
+
+form input {
+  border: 1px solid black;
+  /* grid-row: 2 / 2; */
+  width: max-content;
+}
+
+
+#content {
+  border: 1px solid black;
+  min-height: 50vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(8ch, 1fr));
+}
+
+.ImABook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 8ch;
+  width: 20ch;
+  margin: 1rem;
+  border: 1px solid black;
+  padding: 3px;
+  background-color: tomato;
+  font-weight: 600;
+}

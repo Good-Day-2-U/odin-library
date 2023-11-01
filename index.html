@@ -9,12 +9,28 @@
   </head>
   <body>
 
+    <header>My Library</header>
 
 
+    <div class="main-body">
+      <form action="" method="post">
+        <label for="title">Book Title</label>
+        <input type="text" name="title" id="">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="">
+        <label for="pages">Page Count</label>
+        <input type="text" name="pages" id="">
+        <label for="">Have Read: True</label>
+        <input type="radio" name="true" class="radio1">
+        <label for="">Have Read: False</label>
+        <input type="radio" name="false" class="radio1">
+        <input type="button" value="Add" onclick="addBookToLibrary()">
+      </form>
+      <content id="content">
+      </content>
+    </div>
 
-
-
-
-    <script src="script.js"></script>
+    <footer>&copy Brandon Atwood 2023</footer>
+    <script src="libScript.js"></script>
   </body>
 </html>
