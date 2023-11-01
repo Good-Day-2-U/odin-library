@@ -2,6 +2,7 @@ body {
   /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 header, footer {
@@ -14,17 +15,23 @@ header, footer {
 }
 
 
+.main-body {
+  display: flex;
+}
 
-
-
+.form-body {
+  flex: 0.20;
+  border-right: 10px dashed blue;
+}
 
 form {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* margin: 1rem; */
-  width: 100%;
-  padding: 1rem;
+  /* width: 100%; */
+  padding: 3rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(11, 1fr);
   gap: 0.5rem;
 }
 
@@ -41,12 +48,14 @@ form input {
 
 
 #content {
-  border: 1px solid black;
-  min-height: 50vh;
+  flex: .80;
+  /* border: 1px solid black; */
+  min-height: 80vh;
   width: 100%;
   display: grid;
+  padding: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(24ch, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(8ch, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(8ch, .25fr));
 }
 
 .ImABook {
