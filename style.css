@@ -71,3 +71,8 @@ form input {
   background-color: tomato;
   font-weight: 600;
 }
+
+#input-button:hover {
+  background-color: black;
+  color: white;
+}
