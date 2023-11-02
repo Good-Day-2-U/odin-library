@@ -17,36 +17,34 @@ function Book(title, author, pages, read) {
 
 // console.log(TheHobbit.information())
 // console.log(JensBookAboutFey.information())
-const delSelf = function deleteSelf(button) {
-  let parentDiv = button.parentNode
+
+const myLibrary = []
+
+const delSelf = function deleteSelf(button, index) {
+  const parentDiv = button.parentNode;
   parentDiv.remove();
+  myLibrary.splice(index, 1); // Remove the book from the array
+  updateLibrary(); // Update the library to reflect the changes
 }
 
+const updateLibrary = function() {
+  const pdiv = document.querySelector('#content');
+  const childDivs = pdiv.querySelectorAll('.ImABook');
+  childDivs.forEach(div => {
+    div.remove();
+  });
 
-let myLibrary = []
-
-const updateLibrary = function()
-  {
-    const pdiv = document.querySelector('#content')
-    const childDivs = pdiv.querySelectorAll('.ImABook')
-    childDivs.forEach(div => {
-      div.remove();
-    })
-
-    for (let i = 0; i < myLibrary.length; i++) {
-      const newBook = document.createElement('Book' + i)
-      const bookContent = document.createTextNode(myLibrary[i].information())
-      const delButton = document.createElement('Button')
-      delButton.innerHTML = 'Delete'
-      delButton.onclick = function() {delSelf(this);};
-      newBook.appendChild(bookContent);
-      newBook.appendChild(delButton);
-      newBook.classList.add('ImABook')
-      const currentBook = document.getElementById('Book' + i)
-      document.body.insertBefore(newBook, currentBook)
-      // const pdiv = document.querySelector('#content')
-      pdiv.append(newBook)
-    }
+  for (let i = 0; i < myLibrary.length; i++) {
+    const newBook = document.createElement('div'); // Use 'div' instead of 'Book' + i
+    const bookContent = document.createTextNode(myLibrary[i].information());
+    const delButton = document.createElement('button');
+    delButton.innerHTML = 'Delete';
+    delButton.onclick = function() { delSelf(this, i); }; // Pass the index to the function
+    newBook.appendChild(bookContent);
+    newBook.appendChild(delButton);
+    newBook.classList.add('ImABook');
+    pdiv.appendChild(newBook);
+  }
 }
 
 
